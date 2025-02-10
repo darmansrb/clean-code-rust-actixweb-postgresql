@@ -1,0 +1,17 @@
+CREATE TABLE cars (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    model VARCHAR NOT NULL,
+    year INTEGER NOT NULL,
+    price_per_day DECIMAL NOT NULL,
+    is_available BOOLEAN NOT NULL DEFAULT true,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE users (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    username VARCHAR NOT NULL,
+    email VARCHAR NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
